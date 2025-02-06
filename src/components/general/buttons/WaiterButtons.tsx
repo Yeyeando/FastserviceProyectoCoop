@@ -14,9 +14,7 @@ const WaiterButtons: React.FC = () => {
       <button className="nav-button" onClick={() => handleNavigation("/")}>
         Take order
       </button>
-      <button className="nav-button" onClick={() => openHelp()}>
-        help
-      </button>
+      <img src="/img/help.svg" alt="help" onClick={openHelp} />
       <button
         className="nav-button"
         onClick={() => handleNavigation("/PickUp")}
