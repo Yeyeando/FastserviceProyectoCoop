@@ -13,10 +13,15 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "chart.js": "^4.4.7",
+    "exceljs": "^4.4.0",
+    "file-saver": "^2.0.5",
     "jsdom": "^26.0.0",
     "react": "^18.3.1",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.28.0"
+    "react-router-dom": "^6.28.0",
+    "react-table": "^7.8.0"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
@@ -38,5 +43,6 @@
     "vite": "^5.4.10",
     "vitest": "^3.0.2",
     "vitest-fetch-mock": "^0.4.3"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
