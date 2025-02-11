@@ -7,7 +7,6 @@ interface Dish {
   ingredients?: number[];
 }
 
-
 interface DishContextType {
   selectedDishes: Dish[];
   addDish: (dish: Dish, table?: number) => void;
