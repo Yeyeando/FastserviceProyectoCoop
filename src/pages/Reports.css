@@ -1,0 +1,7 @@
+#report-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+}

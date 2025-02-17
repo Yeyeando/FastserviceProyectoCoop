@@ -1,4 +1,3 @@
-
 // import React from "react";
 // import imagesData from "../../general/jsons/tables/tables.json";
 // import "./gallery.css";
