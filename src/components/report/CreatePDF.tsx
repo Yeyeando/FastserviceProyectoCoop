@@ -20,9 +20,9 @@ const CreatePDF: React.FC = () => {
       const pageWidth = pdf.internal.pageSize.getWidth();
       const pageHeight = pdf.internal.pageSize.getHeight();
 
-      const margin = 10; // Margen en mm a los lados
-      const imgWidth = pageWidth - 2 * margin; // Ajusta el ancho restando los márgenes
-      const imgHeight = (canvas.height * imgWidth) / canvas.width; // Mantiene la proporción
+      const margin = 10;
+      const imgWidth = pageWidth - 2 * margin;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
       pdf.addImage(imgData, "PNG", margin, 20, imgWidth, imgHeight);
       pdf.save("Reporte.pdf");
