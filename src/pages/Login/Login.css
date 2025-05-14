@@ -51,6 +51,7 @@
   width: 100%;
   text-align: left;
   font-size: 21px;
+  color: black;
 }
 
 .form-section input,
@@ -65,6 +66,22 @@ select {
 
 .form-section input::placeholder {
   font-size: 18px;
+}
+
+#register-option {
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+
+#register-option a {
+  color: blue;
+  text-decoration: underline;
+}
+
+#register-option a:hover {
+  color: dodgerblue;
+  text-decoration: underline;
 }
 
 #button-container {

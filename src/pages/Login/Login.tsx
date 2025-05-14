@@ -20,6 +20,10 @@ const Login: React.FC = () => {
           </div>
         </div>
 
+        <div id="register-option">
+          <a href="/Register">I dont have account.</a>
+        </div>
+
         <div id="button-container">
           <button>Login</button>
         </div>
