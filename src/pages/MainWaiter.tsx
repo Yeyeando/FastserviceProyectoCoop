@@ -8,7 +8,7 @@ function MainWaiter() {
     <>
       <Header title="Select a table" showBackButton={false} />
       <Tables nextRoute={"/MenuWaiter"} />
-      <Footer/>
+      <Footer />
     </>
   );
 }

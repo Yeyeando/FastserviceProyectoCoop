@@ -7,16 +7,18 @@ import DishesWaiter from "./pages/DishesWaiter";
 import Confirmation from "./pages/Confirmation";
 import PickUp from "./pages/PickUp";
 import { DishProvider } from "./pages/DishContext";
-import Login from "./pages/Login/Login.tsx"
+import Login from "./pages/Login/Login.tsx";
 import Report from "./pages/Report";
+import Register from "./pages/Register/Register.tsx";
 
 const AppRouter: React.FC = () => {
   return (
     <DishProvider>
       <Router>
         <Routes>
-          <Route path="/Login" element={<Login />} />
-          <Route path="/" element={<MainWaiter />} />
+          <Route path="/Register" element={<Register />} />
+          <Route path="/" element={<Login />} />
+          <Route path="/Home" element={<MainWaiter />} />
           <Route path="/MenuWaiter/:table" element={<MenuWaiter />} />
           <Route path="/DishesWaiter/:table?/:id" element={<DishesWaiter />} />
           <Route path="/Confirmation/:table?/:id?" element={<Confirmation />} />
