@@ -7,6 +7,7 @@ import DishesWaiter from "./pages/DishesWaiter";
 import Confirmation from "./pages/Confirmation";
 import PickUp from "./pages/PickUp";
 import { DishProvider } from "./pages/DishContext";
+import Login from "./pages/Login/Login.tsx"
 import Report from "./pages/Report";
 
 const AppRouter: React.FC = () => {
@@ -14,6 +15,7 @@ const AppRouter: React.FC = () => {
     <DishProvider>
       <Router>
         <Routes>
+          <Route path="/Login" element={<Login />} />
           <Route path="/" element={<MainWaiter />} />
           <Route path="/MenuWaiter/:table" element={<MenuWaiter />} />
           <Route path="/DishesWaiter/:table?/:id" element={<DishesWaiter />} />
