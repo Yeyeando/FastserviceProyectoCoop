@@ -1,4 +1,4 @@
-#login-container {
+#register-container {
   box-sizing: border-box;
   margin: 0;
   padding: 5%;
@@ -30,7 +30,7 @@
   width: 100%;
 }
 
-#login-form {
+#register-form {
   width: 90%;
   display: flex;
   justify-content: center;
@@ -61,10 +61,11 @@ select {
   color: black;
   border-radius: 5px;
   border: 1px solid black;
+  font-size: 16px;
 }
 
 .form-section input::placeholder {
-  font-size: 18px;
+  font-size: 16px;
 }
 
 #button-container {

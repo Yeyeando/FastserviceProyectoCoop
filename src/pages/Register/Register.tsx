@@ -1,14 +1,15 @@
 import React from "react";
-import "./Login.css";
-const Login: React.FC = () => {
+import "./Register.css";
+
+const Register: React.FC = () => {
   return (
-    <section id="login-container">
+    <section id="register-container">
       <div id="form-container">
         <div id="image-container">
           <img src="../../../public/img/user-icon.svg" alt="" />
         </div>
 
-        <div id="login-form">
+        <div id="register-form">
           <div className="form-section">
             <label>Name</label>
             <input placeholder="Enter your name"></input>
@@ -17,6 +18,15 @@ const Login: React.FC = () => {
           <div className="form-section">
             <label>Password</label>
             <input placeholder="Enter your password"></input>
+          </div>
+
+          <div className="form-section">
+            <label>Restaurant</label>
+            <select defaultValue="">
+              <option value="" disabled>
+                Select the restaurant
+              </option>
+            </select>
           </div>
         </div>
 
@@ -28,4 +38,4 @@ const Login: React.FC = () => {
   );
 };
 
-export default Login;
+export default Register;
