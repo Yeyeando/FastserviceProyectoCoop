@@ -49,7 +49,6 @@ const ImageGallery: React.FC<galleryProps> = ({ nextRoute = "/" }) => {
   const [tables, setTables] = useState<any[]>([]); // Estado para almacenar las mesas
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-
   // Obtener datos de las mesas desde el servicio
   useEffect(() => {
     const fetchTables = async () => {
@@ -80,8 +79,8 @@ const ImageGallery: React.FC<galleryProps> = ({ nextRoute = "/" }) => {
       {tables.map((table) => (
         <div
           className="grid-item"
-          key={table.id_table}
-          onClick={handleNext(table.id_table)}
+          key={table.id}
+          onClick={handleNext(table.id)}
         >
           <div className="image-container">
             <img
@@ -90,7 +89,7 @@ const ImageGallery: React.FC<galleryProps> = ({ nextRoute = "/" }) => {
               className="img-fluid"
             />
             <div className="overlay">
-              <span className="image-id">{table.id_table}</span>
+              <span className="image-id">{table.number}</span>
             </div>
           </div>
         </div>

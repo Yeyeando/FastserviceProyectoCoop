@@ -1,12 +1,12 @@
 import React from "react";
-import Grid from "../components/menu-grid/Grid";
-import HorizontalCard from "../components/general/horizontalcard/HorizontalCard";
-import ActionButtons from "../components/general/buttons/ActionButtons";
-import { useDishContext } from "./DishContext";
-import Header from "../components/general/header/Header";
-import Footer from "../components/general/footer/Footer";
-import ingredientsData from "../components/general/jsons/ingredients/ingredients.json";
-import "./pages-css/Confirmation.css"
+import Grid from "../../components/menu-grid/Grid";
+import HorizontalCard from "../../components/general/horizontalcard/HorizontalCard";
+import ActionButtons from "../../components/general/buttons/ActionButtons";
+import { useDishContext } from "./../DishContext";
+import Header from "../../components/general/header/Header";
+import Footer from "../../components/general/footer/Footer";
+import ingredientsData from "../../components/general/jsons/ingredients/ingredients.json";
+import "./Confirmation.css";
 import { useParams } from "react-router-dom";
 
 function Confirmation() {
@@ -51,23 +51,23 @@ function Confirmation() {
             .map((dish, index) => (
               <div key={index}>
                 <div className="ingredients-container">
-                <HorizontalCard
-                  showButton={true}
-                  title={dish.title}
-                  image={dish.image}
-                  onRemove={() => removeDish(index)}
-                />
-                {/* Mostrar ingredientes agrupados */}
-                
-                <ul>
-                  {groupIngredients(dish.ingredients).map(
-                    ({ name, count }, idx) => (
-                      <li key={idx}>
-                        {name} x{count}
-                      </li>
-                    )
-                  )}
-                </ul>
+                  <HorizontalCard
+                    showButton={true}
+                    title={dish.title}
+                    image={dish.image}
+                    onRemove={() => removeDish(index)}
+                  />
+                  {/* Mostrar ingredientes agrupados */}
+
+                  <ul>
+                    {groupIngredients(dish.ingredients).map(
+                      ({ name, count }, idx) => (
+                        <li key={idx}>
+                          {name} x{count}
+                        </li>
+                      )
+                    )}
+                  </ul>
                 </div>
               </div>
             ))
@@ -76,10 +76,10 @@ function Confirmation() {
         )}
       </Grid>
       <ActionButtons
-        cancelRoute="/" 
-        confirmRoute="/" 
-        confirmText="Send" // Cambia el texto del botón Confirm a Send
-        onSend={handleSend} // Asigna la funcionalidad de Send
+        cancelRoute="/Home"
+        confirmRoute="/Home"
+        confirmText="Send"
+        onSend={handleSend}
       />
       <Footer />
     </>
