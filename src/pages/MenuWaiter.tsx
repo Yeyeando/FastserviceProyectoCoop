@@ -12,7 +12,7 @@ function MenuWaiter() {
 
   return (
     <>
-      <Header title="Menu" backRoute="/" />
+      <Header title="Menu" backRoute="/Home" />
       <Grid>
         {menuId &&
           menuId.menu.map((item, index) => (

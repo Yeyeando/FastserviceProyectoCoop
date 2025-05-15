@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import {logout} from  "../../../services/authService"
 import "../Header/header.css";
 
 interface HeaderProps {
@@ -25,6 +26,7 @@ const Header: React.FC<HeaderProps> = ({
   const handleMainBack = () => {
     if (mainRoute) {
       navigate(mainRoute);
+      logout();
     }
   };
 
