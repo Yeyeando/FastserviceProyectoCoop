@@ -16,3 +16,10 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+@media (max-width: 650px) {
+  .nav-button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
