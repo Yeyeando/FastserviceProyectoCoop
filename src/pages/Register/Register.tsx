@@ -13,9 +13,9 @@ const Register: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Obtener lista de restaurantes
-    axios.get("http://localhost:8080/restaurants")
-      .then(res => setRestaurants(res.data))
+    axios
+      .get("http://localhost:8080/restaurants")
+      .then((res) => setRestaurants(res.data))
       .catch(() => setError("Error al cargar los restaurantes"));
   }, []);
 
@@ -23,7 +23,11 @@ const Register: React.FC = () => {
     e.preventDefault();
     setError(null);
     try {
-      await register({ username, password, restaurantId: Number(restaurantId) });
+      await register({
+        username,
+        password,
+        restaurantId: Number(restaurantId),
+      });
       navigate("/");
     } catch (err: any) {
       setError(err.response?.data || "Error al registrar");
@@ -32,7 +36,7 @@ const Register: React.FC = () => {
 
   return (
     <section id="register-container">
-      <form id="form-container" onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <div id="image-container">
           <img src="../../../public/img/user-icon.svg" alt="User Icon" />
         </div>
@@ -43,7 +47,7 @@ const Register: React.FC = () => {
             <input
               placeholder="Enter your name"
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -54,7 +58,7 @@ const Register: React.FC = () => {
               type="password"
               placeholder="Enter your password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -63,10 +67,12 @@ const Register: React.FC = () => {
             <label>Restaurant</label>
             <select
               value={restaurantId}
-              onChange={e => setRestaurantId(e.target.value)}
+              onChange={(e) => setRestaurantId(e.target.value)}
               required
             >
-              <option value="" disabled>Select the restaurant</option>
+              <option value="" disabled>
+                Select the restaurant
+              </option>
               {restaurants.map((restaurant: any) => (
                 <option key={restaurant.id} value={restaurant.id}>
                   {restaurant.name}
