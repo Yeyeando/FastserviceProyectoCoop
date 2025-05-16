@@ -25,15 +25,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-#image-container {
+.login-image-container {
   width: 10%;
   display: flex;
   justify-content: center;
   align-content: center;
 }
 
-#image-container img {
-  width: 100%;
+.login-image-container img {
+  width: 130%;
 }
 
 #login-form {
@@ -42,7 +42,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 2vh;
+  gap: 1vh;
 }
 
 .form-section {
@@ -96,14 +96,14 @@ select {
   text-decoration: underline;
 }
 
-#button-container {
+#login-button-container {
   width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#button-container button {
+#login-button-container button {
   width: 30%;
   border: 1px solid black;
   background-color: black;
@@ -112,8 +112,8 @@ select {
   transition: all 0.4s ease;
 }
 
-#button-container button:hover {
+#login-button-container button:hover {
   border: 1px solid black;
-  background-color: darkgreen;
-  color: white;
+  background-color: transparent;
+  color: black;
 }

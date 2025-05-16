@@ -23,7 +23,7 @@ const Login: React.FC = () => {
   return (
     <section id="login-container">
       <form id="form-container" onSubmit={handleSubmit}>
-        <div id="image-container">
+        <div className="login-image-container">
           <img src="../../../public/img/user-icon.svg" alt="User Icon" />
         </div>
 
@@ -34,7 +34,7 @@ const Login: React.FC = () => {
               type="text"
               placeholder="Enter your name"
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
@@ -45,7 +45,7 @@ const Login: React.FC = () => {
               type="password"
               placeholder="Enter your password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
@@ -57,7 +57,7 @@ const Login: React.FC = () => {
           <a href="/Register">I don't have an account.</a>
         </div>
 
-        <div id="button-container">
+        <div id="login-button-container">
           <button type="submit">Login</button>
         </div>
       </form>

@@ -33,7 +33,7 @@
 }
 
 #image-container img {
-  width: 100%;
+  width: 120%;
 }
 
 #register-form {
@@ -115,6 +115,6 @@ select {
 
 #button-container button:hover {
   border: 1px solid black;
-  background-color: darkgreen;
-  color: white;
+  background-color: transparent;
+  color: black;
 }
