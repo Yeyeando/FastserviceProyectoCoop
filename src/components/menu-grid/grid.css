@@ -2,8 +2,9 @@
   margin-top: 10dvh;
   margin-bottom: 10dvh;
   display: grid;
-  gap: 40px; /* Espaciado entre celdas */
+  gap: 40px;
   width: 100vw;
+  height: 80dvh;
 }
 
 /* Extra small devices (phones, 600px and down) */

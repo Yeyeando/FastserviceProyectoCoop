@@ -7,7 +7,7 @@ interface HorizontalCardProps {
   buttonIcon?: string;
   buttonText?: string;
   showButton?: boolean;
-  ingredients?: number[]; // Lista de IDs de ingredientes
+  ingredients?: number[];
   onClick?: () => void;
   onRemove?: () => void;
 }
@@ -27,7 +27,7 @@ const HorizontalCard: React.FC<HorizontalCardProps> = ({
         <button
           className="card-button"
           onClick={(e) => {
-            e.stopPropagation(); // Evita que el clic en el botón active el `onClick` de la tarjeta
+            e.stopPropagation();
             if (onRemove) onRemove();
           }}
         >
