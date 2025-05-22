@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 interface galleryProps {
   nextRoute?: string;
-} 
+}
 const ImageGallery: React.FC<galleryProps> = ({ nextRoute = "/" }) => {
   const navigate = useNavigate();
   const [tables, setTables] = useState<any[]>([]);
@@ -36,28 +36,28 @@ const ImageGallery: React.FC<galleryProps> = ({ nextRoute = "/" }) => {
   if (loading) return <h1>Cargando mesas...</h1>;
   if (error) return <h1>{error}</h1>;
   return (
-      <div className="tables-container">
-        <div className="grid-container">
-          {tables.map((table) => (
-            <div
-              className="grid-item"
-              key={table.id}
-              onClick={handleNext(table.id)}
-            >
-              <div className="image-container">
-                <img
-                  src={"/img/chair.svg"}
-                  alt={`Mesa ${table.number}`}
-                  className="img-fluid"
-                />
-                <div className="overlay">
-                  <span className="image-id">{table.number}</span>
-                </div>
+    <div className="tables-container">
+      <div className="grid-container">
+        {tables.map((table) => (
+          <div
+            className="grid-item"
+            key={table.id}
+            onClick={handleNext(table.id)}
+          >
+            <div className="image-container">
+              <img
+                src={"/img/chair.svg"}
+                alt={`Mesa ${table.number}`}
+                className="img-fluid"
+              />
+              <div className="overlay">
+                <span className="image-id">{table.number}</span>
               </div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
+    </div>
   );
 };
 

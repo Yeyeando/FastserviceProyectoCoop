@@ -10,7 +10,7 @@ import MainWaiter from "./pages/MainWaiter/MainWaiter.tsx";
 import MenuWaiter from "./pages/MenuWaiter/MenuWaiter.tsx";
 import DishesWaiter from "./pages/DishesWaiter/DishesWaiter.tsx";
 import Confirmation from "./pages/Confirmation/Confirmation.tsx";
-import PickUp from "./pages/PickUp";
+import PickUp from "./pages/PickUp/PickUp.tsx";
 import { DishProvider } from "./pages/DishContext";
 import Login from "./pages/Login/Login.tsx";
 import Report from "./pages/Report";
