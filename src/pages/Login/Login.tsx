@@ -21,29 +21,29 @@ const Login: React.FC = () => {
   };
 
   return (
-    <section id="login-container">
-      <form id="form-container" onSubmit={handleSubmit}>
-        <div className="login-image-container">
+    <section id="login-page">
+      <form id="login-form-wrapper" onSubmit={handleSubmit}>
+        <div className="login-avatar">
           <img src="../../../public/img/user-icon.svg" alt="User Icon" />
         </div>
 
-        <div id="login-form">
-          <div className="form-section">
+        <div id="login-fields">
+          <div className="login-input-group">
             <label>Name</label>
             <input
               type="text"
-              placeholder="Enter your name"
+              placeholder="Name"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
 
-          <div className="form-section">
+          <div className="login-input-group">
             <label>Password</label>
             <input
               type="password"
-              placeholder="Enter your password"
+              placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
@@ -51,13 +51,13 @@ const Login: React.FC = () => {
           </div>
         </div>
 
-        {error && <p className="error">{error}</p>}
+        {error && <p className="login-error">{error}</p>}
 
-        <div id="register-option">
-          <a href="/Register">I don't have an account.</a>
+        <div id="login-register-link">
+          <a href="/Register">Go to register</a>
         </div>
 
-        <div id="login-button-container">
+        <div id="login-submit-button">
           <button type="submit">Login</button>
         </div>
       </form>
