@@ -35,14 +35,14 @@ const Register: React.FC = () => {
   };
 
   return (
-    <section id="register-container">
-      <form className="form-container" onSubmit={handleSubmit}>
-        <div id="image-container">
+    <section id="register-page">
+      <form id="register-form-wrapper" onSubmit={handleSubmit}>
+        <div id="register-avatar">
           <img src="../../../public/img/user-icon.svg" alt="User Icon" />
         </div>
 
-        <div id="register-form">
-          <div className="form-section">
+        <div id="register-fields">
+          <div className="register-input-group">
             <label>Name</label>
             <input
               placeholder="Enter your name"
@@ -52,7 +52,7 @@ const Register: React.FC = () => {
             />
           </div>
 
-          <div className="form-section">
+          <div className="register-input-group">
             <label>Password</label>
             <input
               type="password"
@@ -63,7 +63,7 @@ const Register: React.FC = () => {
             />
           </div>
 
-          <div className="form-section">
+          <div className="register-input-group">
             <label>Restaurant</label>
             <select
               value={restaurantId}
@@ -82,9 +82,13 @@ const Register: React.FC = () => {
           </div>
         </div>
 
-        {error && <p className="error">{error}</p>}
+        {error && <p className="register-error">{error}</p>}
 
-        <div id="button-container">
+        <div id="register-login-link">
+          <a href="/">Go to login</a>
+        </div>
+
+        <div id="register-submit-button">
           <button type="submit">Register</button>
         </div>
       </form>
