@@ -1,97 +1,102 @@
-#login-container {
+#login-page {
   box-sizing: border-box;
   margin: 0;
-  padding: 5%;
   width: 100%;
   height: 100dvh;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-#form-container {
-  width: 60%;
-  height: 60%;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 1dvh;
+  background: linear-gradient(180deg, #3d3d3d, #fd5d5d, #3d3d3d);
+  background-size: 100%;
 }
 
-#image-container {
+#login-form-wrapper {
+  width: 40%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1dvh;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+.login-avatar {
   width: 10%;
   display: flex;
   justify-content: center;
-  align-content: center;
 }
 
-#image-container img {
-  width: 100%;
+.login-avatar img {
+  width: 130%;
 }
 
-#login-form {
+#login-fields {
   width: 90%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
   gap: 2vh;
 }
 
-.form-section {
+.login-input-group {
   width: 50%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  gap: 1vh;
 }
 
-.form-section label {
+.login-input-group label {
   width: 100%;
   text-align: left;
   font-size: 21px;
   color: black;
 }
 
-.form-section input,
-select {
+.login-input-group input,
+.login-input-group select {
   width: 100%;
   padding: 0.5rem 1rem;
   background-color: white;
   color: black;
   border-radius: 5px;
   border: 1px solid black;
+  font-size: 21px;
 }
 
-.form-section input::placeholder {
+.login-input-group input::placeholder {
   font-size: 18px;
 }
 
-#register-option {
+#login-register-link {
   width: 45%;
   display: flex;
-  align-items: center;
+  justify-content: center;
 }
 
-#register-option a {
+#login-register-link a {
   color: blue;
   text-decoration: underline;
 }
 
-#register-option a:hover {
-  color: dodgerblue;
-  text-decoration: underline;
+.login-error {
+  color: darkred;
+  text-align: left;
+  width: 45%;
 }
 
-#button-container {
+#login-submit-button {
   width: 90%;
   display: flex;
   justify-content: center;
-  align-items: center;
 }
 
-#button-container button {
+#login-submit-button button {
   width: 30%;
   border: 1px solid black;
   background-color: black;
@@ -100,8 +105,26 @@ select {
   transition: all 0.4s ease;
 }
 
-#button-container button:hover {
-  border: 1px solid black;
-  background-color: darkgreen;
-  color: white;
+#login-submit-button button:hover {
+  color: rgb(176, 210, 241);
 }
+
+@media only screen and (max-width: 768px) {
+  #login-form-wrapper {
+    width: 90%;
+  }
+
+  .login-input-group {
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  #login-form-wrapper {
+    width: 60%;
+  }
+
+  .login-input-group {
+    width: 90%;
+  }
+}
+

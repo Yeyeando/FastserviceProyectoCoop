@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../sliding-panel/ingredient-panel.css";
 import { useParams } from "react-router-dom";
 import ingredientsData from "../../general/jsons/ingredients/ingredients.json";
-import categoriesData from "../../general/jsons/categories/categories.json"; // Importar la tabla de categorías
+import categoriesData from "../../general/jsons/categories/categories.json";
 import { useDishContext } from "../../../pages/DishContext";
 
 interface Ingredient {
@@ -11,11 +11,11 @@ interface Ingredient {
 }
 
 interface IngredientPanelProps {
-  title: string; 
+  title: string;
   image: string;
   category: string;
   initialIngredients: number[];
-  onClose: () => void; 
+  onClose: () => void;
 }
 
 const IngredientPanel: React.FC<IngredientPanelProps> = ({

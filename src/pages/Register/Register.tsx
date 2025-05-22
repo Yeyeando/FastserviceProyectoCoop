@@ -13,9 +13,9 @@ const Register: React.FC = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Obtener lista de restaurantes
-    axios.get("http://localhost:8080/restaurants")
-      .then(res => setRestaurants(res.data))
+    axios
+      .get("http://localhost:8080/restaurants")
+      .then((res) => setRestaurants(res.data))
       .catch(() => setError("Error al cargar los restaurantes"));
   }, []);
 
@@ -23,7 +23,11 @@ const Register: React.FC = () => {
     e.preventDefault();
     setError(null);
     try {
-      await register({ username, password, restaurantId: Number(restaurantId) });
+      await register({
+        username,
+        password,
+        restaurantId: Number(restaurantId),
+      });
       navigate("/");
     } catch (err: any) {
       setError(err.response?.data || "Error al registrar");
@@ -31,42 +35,44 @@ const Register: React.FC = () => {
   };
 
   return (
-    <section id="register-container">
-      <form id="form-container" onSubmit={handleSubmit}>
-        <div id="image-container">
+    <section id="register-page">
+      <form id="register-form-wrapper" onSubmit={handleSubmit}>
+        <div id="register-avatar">
           <img src="../../../public/img/user-icon.svg" alt="User Icon" />
         </div>
 
-        <div id="register-form">
-          <div className="form-section">
+        <div id="register-fields">
+          <div className="register-input-group">
             <label>Name</label>
             <input
               placeholder="Enter your name"
               value={username}
-              onChange={e => setUsername(e.target.value)}
+              onChange={(e) => setUsername(e.target.value)}
               required
             />
           </div>
 
-          <div className="form-section">
+          <div className="register-input-group">
             <label>Password</label>
             <input
               type="password"
               placeholder="Enter your password"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
 
-          <div className="form-section">
+          <div className="register-input-group">
             <label>Restaurant</label>
             <select
               value={restaurantId}
-              onChange={e => setRestaurantId(e.target.value)}
+              onChange={(e) => setRestaurantId(e.target.value)}
               required
             >
-              <option value="" disabled>Select the restaurant</option>
+              <option value="" disabled>
+                Select the restaurant
+              </option>
               {restaurants.map((restaurant: any) => (
                 <option key={restaurant.id} value={restaurant.id}>
                   {restaurant.name}
@@ -76,9 +82,13 @@ const Register: React.FC = () => {
           </div>
         </div>
 
-        {error && <p className="error">{error}</p>}
+        {error && <p className="register-error">{error}</p>}
 
-        <div id="button-container">
+        <div id="register-login-link">
+          <a href="/">Go to login</a>
+        </div>
+
+        <div id="register-submit-button">
           <button type="submit">Register</button>
         </div>
       </form>

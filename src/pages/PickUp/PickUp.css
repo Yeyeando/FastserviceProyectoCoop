@@ -1,4 +1,4 @@
-#confirmation-container {
+#pickup-container {
   width: 100%;
   height: 100dvh;
   display: flex;
@@ -7,9 +7,5 @@
   background: url("../../../public/img/background-login.svg") no-repeat center
     center fixed;
   background-size: 100%;
-}
-
-.ingredients-container {
   color: black;
-  padding: 5%;
 }

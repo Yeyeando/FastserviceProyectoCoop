@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import Header from "../components/general/header/Header";
-import Footer from "../components/general/footer/Footer";
-import HorizontalCard from "../components/general/horizontalcard/HorizontalCard";
-import Grid from "../components/menu-grid/Grid";
-import ActionButtons from "../components/general/buttons/ActionButtons";
-import categoriesData from "../components/general/jsons/categories/categories.json";
-import IngredientPanel from "../components/dishes-waiter/sliding-panel/IngredientPanel";
+import Header from "../../components/general/header/Header";
+import Footer from "../../components/general/footer/Footer";
+import HorizontalCard from "../../components/general/horizontalcard/HorizontalCard";
+import Grid from "../../components/menu-grid/Grid";
+import ActionButtons from "../../components/general/buttons/ActionButtons";
+import categoriesData from "../../components/general/jsons/categories/categories.json";
+import IngredientPanel from "../../components/dishes-waiter/sliding-panel/IngredientPanel";
 import { useParams } from "react-router-dom";
+import "./DishesWaiter.css";
 
 function DishesWaiter() {
   const { id, table } = useParams();
@@ -24,7 +25,7 @@ function DishesWaiter() {
   } | null>(null);
 
   return (
-    <>
+    <div id="dishesWaiter-container">
       <Header title="Menu" backRoute={`/MenuWaiter/${table}`} />
       <Grid>
         {category ? (
@@ -61,8 +62,8 @@ function DishesWaiter() {
           onClose={() => setSelectedDish(null)}
         />
       )}
-      <Footer/>
-    </>
+      <Footer />
+    </div>
   );
 }
 

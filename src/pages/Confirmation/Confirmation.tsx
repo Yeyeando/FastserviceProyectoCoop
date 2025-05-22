@@ -42,7 +42,7 @@ function Confirmation() {
   };
 
   return (
-    <>
+    <div id="confirmation-container">
       <Header backRoute={`/DishesWaiter/${table}/${id}`} title="Confirmation" />
       <Grid>
         {selectedDishes.length > 0 ? (
@@ -82,7 +82,7 @@ function Confirmation() {
         onSend={handleSend}
       />
       <Footer />
-    </>
+    </div>
   );
 }
 

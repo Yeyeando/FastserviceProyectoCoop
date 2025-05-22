@@ -1,11 +1,16 @@
 import "./services/axiosConfig.js";
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import MainWaiter from "./pages/MainWaiter/MainWaiter.tsx";
-import MenuWaiter from "./pages/MenuWaiter";
-import DishesWaiter from "./pages/DishesWaiter";
+import MenuWaiter from "./pages/MenuWaiter/MenuWaiter.tsx";
+import DishesWaiter from "./pages/DishesWaiter/DishesWaiter.tsx";
 import Confirmation from "./pages/Confirmation/Confirmation.tsx";
-import PickUp from "./pages/PickUp";
+import PickUp from "./pages/PickUp/PickUp.tsx";
 import { DishProvider } from "./pages/DishContext";
 import Login from "./pages/Login/Login.tsx";
 import Report from "./pages/Report";
@@ -20,7 +25,10 @@ const AppRouter: React.FC = () => {
       <Router>
         <Routes>
           <Route path="/Register" element={<Register />} />
-          <Route path="/" element={isAuthenticated ? <Navigate to="/Home" /> : <Login />} />
+          <Route
+            path="/"
+            element={isAuthenticated ? <Navigate to="/Home" /> : <Login />}
+          />
           <Route
             path="/Home"
             element={
