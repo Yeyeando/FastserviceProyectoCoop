@@ -18,7 +18,7 @@ const WaiterButtons: React.FC = () => {
     <div className="button-container">
       <button
         className="nav-button"
-        onClick={helpMode ? openHelp : () => handleNavigation("/")}
+        onClick={helpMode ? openHelp : () => handleNavigation("/home")}
       >
         {helpMode ? "Help" : "Take order"}
       </button>

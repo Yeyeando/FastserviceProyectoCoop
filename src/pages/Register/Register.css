@@ -104,10 +104,6 @@
   transition: all 0.4s ease;
 }
 
-#register-submit-button button:hover {
-  background-color: transparent;
-  color: black;
-}
 
 @media only screen and (max-width: 768px) {
   #register-form-wrapper {

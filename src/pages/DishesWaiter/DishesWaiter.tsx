@@ -50,7 +50,7 @@ function DishesWaiter() {
         )}
       </Grid>
       <ActionButtons
-        cancelRoute="/"
+        cancelRoute="/home"
         confirmRoute={`/confirmation/${table}/${id}`}
       />
       {selectedDish && (
