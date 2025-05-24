@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url("../../../public/img/background-login.svg") no-repeat center
-    center fixed;
+   background: linear-gradient(180deg, #3d3d3d, #fd5d5d, #3d3d3d);
   background-size: 100%;
 }
