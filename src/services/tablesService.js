@@ -1,11 +1,12 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/tables"; // URL del backend de Spring Boot
+const BASE_URL = "http://localhost:8080/tables/my-restaurant";
+const getUserId = () => localStorage.getItem("userId");
 
 // Obtener todas las mesas
 export const getAllTables = async () => {
   try {
-    const response = await axios.get(API_URL);
+    const response = await axios.get(`${BASE_URL}?userId=${getUserId()}`);
     return response.data;
   } catch (error) {
     console.error("Error obteniendo las mesas:", error);
@@ -16,7 +17,7 @@ export const getAllTables = async () => {
 // Obtener una mesa por ID
 export const getTableById = async (id) => {
   try {
-    const response = await axios.get(`${API_URL}/${id}`);
+    const response = await axios.get(`${BASE_URL}/${id}?userId=${getUserId()}`);
     return response.data;
   } catch (error) {
     console.error(`Error obteniendo la mesa con id ${id}:`, error);
@@ -27,7 +28,10 @@ export const getTableById = async (id) => {
 // Crear una nueva mesa
 export const createTable = async (tableData) => {
   try {
-    const response = await axios.post(API_URL, tableData);
+    const response = await axios.post(
+      `${BASE_URL}?userId=${getUserId()}`,
+      tableData
+    );
     return response.data;
   } catch (error) {
     console.error("Error creando la mesa:", error);
@@ -38,7 +42,10 @@ export const createTable = async (tableData) => {
 // Actualizar una mesa por ID
 export const updateTable = async (id, tableData) => {
   try {
-    const response = await axios.put(`${API_URL}/${id}`, tableData);
+    const response = await axios.put(
+      `${BASE_URL}/${id}?userId=${getUserId()}`,
+      tableData
+    );
     return response.data;
   } catch (error) {
     console.error(`Error actualizando la mesa con id ${id}:`, error);
@@ -50,7 +57,7 @@ export const updateTable = async (id, tableData) => {
 export const updateTableAvailability = async (id, availability) => {
   try {
     const response = await axios.put(
-      `${API_URL}/${id}/availability`,
+      `${BASE_URL}/${id}/availability?userId=${getUserId()}`,
       availability,
       {
         headers: {

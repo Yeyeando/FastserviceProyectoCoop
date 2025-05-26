@@ -8,14 +8,18 @@ export const login = async ({ username, password }) => {
     password,
   });
 
-  // 👇 Aquí se guarda el token si existe
-  if (response.data.token) {
-    localStorage.setItem("userToken", response.data.token);
+  const { token, userId } = response.data;
+
+  if (token) {
+    localStorage.setItem("userToken", token);
+  }
+
+  if (userId) {
+    localStorage.setItem("userId", userId); // ✅ Guardamos el userId
   }
 
   return response.data;
 };
-
 
 // Cierra la sesión (elimina el token)
 export const logout = () => {
@@ -30,7 +34,6 @@ export const register = async ({ username, password, restaurantId }) => {
   });
   return response.data;
 };
-
 
 // Recupera el token actual
 export const getCurrentToken = () => {
